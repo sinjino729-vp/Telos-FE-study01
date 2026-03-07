@@ -13,38 +13,68 @@
 
  <header class="header sticky top-0 z-50">
     <div class="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
-        <div class="logo"> <img src="images/logo.svg" alt="logo"></div>
-        
+        <a href="#hero" id="logo">
+          <img src="images/logo.svg" class="logo scale-80 md:scale-100">
+        </a>
+
         <nav class="nav-menu hidden md:flex items-center gap-8">
-         <a href="#" class="nav-link nav-link-active">
+         <a href="#story" class="nav-link nav-link-active">
          182 Ngày +
          </a>
 
-         <a href="#" class="nav-link">
+         <a href="#reward" class="nav-link">
          Khen thưởng
          </a>
 
-         <a href="#" class="nav-link">
+         <a href="#gallery" class="nav-link">
          Nhà kho
          </a>
          </nav>
         
-        <button class="hidden md:flex btn btn-primary btn-icon shadow-card">
+        <button class="openFollowModa hidden md:flex btn btn-primary btn-icon shadow-card">
           <img src="images/ig.svg" alt="">
          Follow Mít</button>
 
-        <button class="md:hidden">
+        <button id="menuBtn" class="md:hidden">
          <img src="images/menu button.svg" alt="">
          </button>
     </div>
 
  </header>
 
- <section class="hero">
+ <div id="mobileMenu"
+class="fixed top-0 right-0 h-full w-[250px] bg-white shadow-lg translate-x-full transition-transform duration-300 z-[70] md:hidden">
+
+
+   <button id="closeMenu"
+    class="absolute top-4 right-4 text-2xl text-neutral-700 hover:text-branding-500">
+    ✕
+   </button>
+
+  <div class="flex flex-col p-6 gap-6">
+
+    <a href="#story" class="nav-link">182 Ngày +</a>
+    <a href="#reward" class="nav-link">Khen thưởng</a>
+    <a href="#gallery" class="nav-link">Nhà kho</a>
+
+    <button class="openFollowModal btn btn-primary btn-icon mt-4 shadow-card">
+      <img src="images/ig.svg" alt="">
+      Follow Mít
+    </button>
+
+  </div>
+
+</div>
+
+<div id="menuOverlay"
+class="fixed inset-0 bg-black/60 hidden z-[60] md:hidden"></div>
+
+
+ <section id="hero" class="hero scroll-mt-24">
 
   <div class="hero-wrapper">
 
-    <div class="hero-content">
+    <div class="hero-content  animate">
 
       <h1 class="hero-title">
         Có những điều không kịp chín.
@@ -61,8 +91,8 @@
       </p>
 
       <div class="hero-actions">
-        <button class="btn btn-primary">Ngó một xíu</button>
-        <button class="btn btn-secondary">Thưởng cho Mít</button>
+        <a href="#story" class="btn btn-primary">Ngó một xíu</a>
+        <a href="#reward" class="btn btn-secondary">Thưởng cho Mít</a>
       </div>
 
       <div class="hero-avatars">
@@ -79,7 +109,7 @@
     <div class="hero-image">
 
       <svg
-        class="hero-blob"
+        class="hero-blob  animate"
         viewBox="0 0 618 723"
         fill="none"
       >
@@ -90,14 +120,9 @@
       </svg>
 
       <img
-        src="images/mit.png"
-        class="hero-dog"
+        src="images/dog.svg"
+        class="hero-dog  animate"
       >
-
-      <img src="images/sticker1.svg" class="hero-sticker hero-sticker-1 ">
-      <img src="images/sticker2.svg" class="hero-sticker hero-sticker-2 ">
-      <img src="images/sticker3.svg" class="hero-sticker hero-sticker-3 ">
-
 
     </div>
 
@@ -105,39 +130,88 @@
 
 </section>
 
-<section class="about">
-  <div class="about max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 p-10 md:p-20 gap-5 md:gap-10 justify-center">
+<section class="about overflow-hidden">
 
-    <div class="about-image ">
-    <img src="images/aboutmit-img.svg" alt="">
-    </div>
+  <div class="max-w-[1200px] mx-auto relative">
 
-    <div class="about-content flex flex-col justify-center items-start gap-4 md:gap-6">
-      <h1 class=" text-h1 md:text-hero text-branding-500 font-bold">Mít - không chín</h1>
+    
+    <div id="aboutTrack" class="flex transition-transform duration-700 ease-in-out">
 
-      <p class="text-bodylg font-normal text-neutral-700">
-        Hà Nội, 18/08/2025, một bé poodle tiny vàng mơ trào đời. <br>
-        Mẹ đặt tên con là Mít — nhưng không có chín. <br>
-        6 tháng đầu đời trôi qua với những lần ăn dặm vụng về,<br>
-        nhiều chút lơm côm,<br>
-        nhưng siêu nhiều dễ thương.
-      </p>
+      
+      <div class="min-w-full grid grid-cols-1 md:grid-cols-2 p-10 md:p-20 gap-6 md:gap-10">
 
-      <div class="about-btn flex flex-row md:justify-start gap-4 md:gap-6">
-        <button>
-        <img src="images/left-circle.svg" alt="" class="w-[50px]">
-        </button>
-        <button>
-        <img src="images/state=default.svg" alt="" class="w-[50px]">
-        </button>
+        <div class="about-image flex justify-center">
+          <img src="images/aboutmit-img.svg" alt="Mít puppy">
+        </div>
+
+        <div class="about-content flex flex-col justify-center gap-4 md:gap-6">
+
+          <h2 class="text-h1 md:text-hero text-branding-500 font-bold">
+             Con tên Mít
+          </h2>
+
+          <p class="text-bodylg text-neutral-700">
+            Hà Nội, ngày 18/08/2025, chào đón một bé poodle tiny vàng mơ nhỏ xíu xiu và bông xù như trái mít vậy. <br>
+            Và mẹ đặt tên con là Mít. <br>
+            Nhưng Mít này hông bao giờ chín luôn.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="min-w-full grid grid-cols-1 md:grid-cols-2 p-10 md:p-20 gap-6 md:gap-10">
+
+        <div class="about-image flex justify-center">
+          <img src="images/about2.svg" alt="Mít at home">
+        </div>
+
+        <div class="about-content flex flex-col justify-center gap-4 md:gap-6">
+
+          <h2 class="text-h1 md:text-hero text-branding-500 font-bold">
+            Ngày đầu về nhà
+          </h2>
+
+          <p class="text-bodylg text-neutral-700">
+            Con là một em bé “mít ướt” chính hiệu. <br>
+            Mấy ngày đầu mẹ đón về nhà con hay kêu ư ư khóc nhè cả đêm. <br>
+            Ưa làm nũng và rất bám mẹ. <br>
+            Niềm vui của con đơn giản là cái xoa đầu.
+          </p>
+
+        </div>
+
       </div>
 
     </div>
 
+
+  
+    <div class="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 gap-4 md:gap-6 z-10">
+
+      <button id="aboutPrev">
+        <img src="images/left-circle.svg" alt="previous" class="w-[40px]">
+      </button>
+
+      <button id="aboutNext">
+        <img src="images/state=default.svg" alt="next" class="w-[40px]">
+      </button>
+
+    </div>
+
+    <div class="flex md:hidden justify-center gap-2 pb-6">
+
+       <span class="dot w-2.5 h-2.5 bg-branding-500 rounded-full"></span>
+       <span class="dot w-2.5 h-2.5 bg-neutral-300 rounded-full"></span>
+
+</div>
+
   </div>
+
 </section>
 
-<section class=" story flex flex-col py-20 gap-14 bg-branding-900">
+<section id="story" class=" story flex flex-col md:py-20 py-10 md:gap-14 gap-6 bg-branding-900 scroll-mt-24">
   
   <div class="flex flex-col items-center gap-2 px-6">
 
@@ -148,7 +222,7 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-6 gap-10 max-w-[1200px] mx-auto">
 
-   <div class="card">
+   <div class="card reveal">
 
     <div class="card-image">
     <img src="images/card1.jpg" alt="">
@@ -170,7 +244,7 @@
 
    </div>
    
-   <div class="card">
+   <div class="card reveal">
 
     <div class="card-image">
     <img src="images/card2.jpg" alt="">
@@ -192,7 +266,7 @@
 
    </div>
 
-   <div class="card">
+   <div class="card reveal">
 
     <div class="card-image">
     <img src="images/card3.jpg" alt="">
@@ -204,7 +278,7 @@
     </h3>
 
     <p class="card-desc">
-      Con có 1 khay vệ sinh màu vàng xinh luôn nè. 
+     Con có 1 khay vệ sinh màu vàng xinh luôn nè. 
      Thi thoảng con mải chơi nên mới quên bài và đi ra ngoài khay một xíu thôi. Hôm sau là con lại nhớ liền.
     </p>
 
@@ -215,7 +289,7 @@
 
    </div>
 
-   <div class="card">
+   <div class="card reveal">
 
     <div class="card-image">
     <img src="images/card4.jpg" alt="">
@@ -237,10 +311,10 @@
 
    </div>
 
-   <div class="card">
+   <div class="card reveal">
 
     <div class="card-image">
-    <img src="images/card5.jpg" alt="">
+    <img src="images/story.jpg" alt="">
     </div>
 
     <div class="card-content">
@@ -258,7 +332,7 @@
 
    </div>
 
-   <div class="card">
+   <div class="card reveal">
 
     <div class="card-image">
     <img src="images/card6.jpg" alt="">
@@ -283,15 +357,15 @@
 </section>
   
 
-<section class="reward flex flex-col py-20 gap-16  bg-branding-200">
+<section id="reward" class="reward relative flex flex-col md:py-20 py-10 md:gap-16 gap-6  bg-branding-200 scroll-mt-24">
 
   <div class="reward-title"> 
-    <h1 class="text-h1 md:text-hero text-center font-bold text-branding-900">Khen thưởng</h1>
+    <h1 class="fade-down text-h1 md:text-hero text-center font-bold text-branding-900">Khen thưởng</h1>
   </div>
 
   <div class="reward-content grid grid-cols-1 md:grid-cols-2 px-6 gap-8 max-w-[1200px] mx-auto">
     
-    <div class="certificate-card">
+    <div class="certificate-card slide-left">
 
      <img src="images/award-solid-full 1.svg" class="certificate-icon">
 
@@ -313,26 +387,502 @@
 
     </div>
 
-    <div class="flex flex-col gap-6 md:gap-10">
+    <div class="flex flex-col content-center gap-6 md:gap-10">
       
-      <img src="images/reward1.svg" alt="">
+      <img src="images/reward1.svg" alt="" class="mit-image slide-right">
 
-      <div class="reward-action flex flex-row justify-center gap-4 md:gap-8 ">
-       <button class="btn btn-primary">Gửi yêu thương</button>
+      <div class="reward-action fade-up flex flex-col md:flex-row md:justify-center gap-3">
+       <button id="openLoveModal" class="btn btn-primary">Gửi yêu thương</button>
        <button class="btn btn-secondary">Vỗ tay khen Mít</button>
       </div>
 
     </div>
   </div>
 
-
-
-
+<audio id="clapSound" src="images/clap.mp3"></audio>
 
 
 </section>
 
+<section class="love-wall-section">
 
-<section class="gallery"></section>
+  <div class="love-slider">
+
+    <div class="love-wall">
+
+      <div class="love-card">
+        <div class="love-header">🐾 Babe</div>
+        <p class="love-message">Mít dễ thương quá</p>
+      </div>
+
+      <div class="love-card">
+        <div class="love-header">🐾 Lan</div>
+        <p class="love-message">Muốn cắn Mít miếng</p>
+      </div>
+
+      <div class="love-card">
+        <div class="love-header">🐾 Huy</div>
+        <p class="love-message">Bé chó quốc dân</p>
+      </div>
+
+      <div class="love-card">
+        <div class="love-header">🐾 Babe</div>
+        <p class="love-message">Mít dễ thương quá</p>
+      </div>
+
+      <div class="love-card">
+        <div class="love-header">🐾 Lan</div>
+        <p class="love-message">Muốn cắn Mít miếng</p>
+      </div>
+
+      <div class="love-card">
+        <div class="love-header">🐾 Huy</div>
+        <p class="love-message">Bé chó quốc dân</p>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+     
+
+
+<section id="gallery" class="gallery scroll-mt-24 bg-branding-100">
+<div class="max-w-[1200px] mx-auto flex flex-col">
+    
+  <div class="flex flex-col py-10 md:py-20 px-6 md:px-auto gap-12">
+      <div class="md:text-hero text-h1 text-center font-bold text-branding-500">Nhà kho của Mít</div>
+      <div class="grid md:grid-cols-3 gap-7">
+        <img src="images/a4.jpg" alt="" class="rounded-xl row-span-1 md:row-span-2 size-full object-cover">
+        <img src="images/gallery2.jpg" alt="" class="rounded-xl sm:col-span-2 size-full object-cover">
+        <img src="images/gallery6.jpg" alt="" class="rounded-xl sm:col-span-2 md:col-span-1 size-full object-cover">
+        <img src="images/gallery3.png" alt="" class="rounded-xl row-span-1 md:row-span-2 size-full object-cover">
+        <img src="images/gallery4.jpg" alt="" class="rounded-xl md:row-span-2 md:col-span-2 size-full object-cover">
+        <img src="images/gallery5.jpg" alt="" class="rounded-xl sm:col-span-2 md:col-span-1 size-full object-cover">
+      </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 w-full py-10 md:py-20 gap-7 px-6 md:px-auto">
+      <div class="flex flex-col">
+        <div class="text-bodylg md:text-H1 font-bold text-branding-900">99+ </div>
+        <div class="md:text-body text-bodysm text-branding-900">Ngoan xinh yêu</div>
+        <div class="w-full h-px bg-branding-900 mt-4"></div>
+      </div>
+      <div class="flex flex-col">
+        <div class="text-bodylg md:text-H1 font-bold text-branding-900">19+</div>
+        <div class="md:text-body text-bodysm text-branding-900">Quậy phá</div>
+        <div class="w-full h-px bg-branding-900 mt-4"></div>
+      </div>
+      <div class="flex flex-col">
+        <div class="text-bodylg md:text-H1 font-bold text-branding-900">01+</div>
+        <div class="md:text-body text-bodysm text-branding-900">Bị phạt</div>
+        <div class="w-full h-px bg-branding-900 mt-4"></div>
+      </div>
+      
+    </div>
+</div>
+</section>
+
+
+<section class="footer1">
+
+  <div class="bg-white flex flex-col items-center text-center p-10 px-6">
+    <img src="images/footer 1.png" alt="" class="w-[250px]">
+    <h1 class="md:text-h1 text-h2 text-branding-500 text-center pt-2 md:pt-4">Nhà kho lôm côm của Mít không chín</h1>
+    <p class="md:text-bodylg text-body text-branding-900">Trữ yêu thương, giữ kỷ niệm, san hạnh phúc</p>
+  </div>
+</section>
+
+<section class="footer2 bg-secondaryCool">
+    <div class="grid md:grid-cols-2 items-center gap-3 md:px-20 px-6 md:py-10 py-6 max-w-[1200px] mx-auto">
+       <img src="images/logo.svg" alt="">
+       <p class="text-body md:text-bodylg  text-left md:text-center text-neutral-100">
+         Made with 182+ ngày yêu thương by Lan Sugar <br>
+         © 2026 Mít không chín</p>
+       </div>
+
+</section>
+
+<div id="loveModal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-[100] px-4">
+
+  <div class="bg-neutral-100 rounded-lg p-6 md:p-10 w-[90%] max-w-[580px] space-y-6">
+    <h3 class=" text-branding-600 text-bodylg font-semibold text-center">
+      Gửi yêu thương tới bé Ngoan quốc dân 🐾
+    </h3>
+
+    <input 
+      id="userName"
+      type="text"
+      placeholder="Bạn tên gì?"
+      class="w-full border rounded-md p-2"
+    />
+
+    <textarea
+      id="userMessage"
+      placeholder="Nhắn gì cho Mít ha..."
+      class="w-full border rounded-md p-2 h-24"
+    ></textarea>
+
+    <div class="flex flex-col md:flex-row gap-3">
+
+      <button id="sendLove"
+      class="btn btn-primary flex-1">
+        Gửi yêu thương
+      </button>
+
+      <button id="closeModal"
+      class="btn btn-secondary flex-1">
+        Hẹn Mít lần sau
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div id="followModal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-[200] px-4">
+
+  <div class="bg-neutral-100 rounded-lg p-6 md:p-10 w-[90%] max-w-[420px] space-y-6 text-center">
+
+    <h3 class="text-branding-600 text-bodylg font-semibold">
+      Follow Mít trên Instagram 🐾
+    </h3>
+
+    <img 
+      src="images/IGQR.jpg"
+      alt="Instagram QR"
+      class="w-[200px] mx-auto rounded-lg"
+    />
+
+    <p class="text-neutral-600 text-bodysm">
+      Quét QR để follow Mít nha
+    </p>
+
+    <div class="flex flex-col md:flex-row gap-3">
+
+      <a 
+      href="https://instagram.com/your_ig"
+      target="_blank"
+      class="btn btn-primary flex-1">
+        Mở Instagram
+      </a>
+
+      <button id="closeFollowModal"
+      class="btn btn-secondary flex-1">
+        Đóng
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+const sections = document.querySelectorAll("#story, #reward, #gallery");
+const navLinks = document.querySelectorAll(".nav-link");
+const hero = document.querySelector("#hero");
+const logo = document.querySelector("#logo");
+
+window.addEventListener("scroll", () => {
+
+  let current = "story";
+
+  sections.forEach(section => {
+
+    const sectionTop = section.offsetTop - 150;
+
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+
+  });
+
+  navLinks.forEach(link => {
+
+    link.classList.remove("nav-link-active");
+
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("nav-link-active");
+    }
+
+  });
+
+});
+
+logo.addEventListener("click",(e)=>{
+
+  e.preventDefault();
+
+  hero.scrollIntoView({
+    behavior:"smooth"
+  });
+
+  const elements = document.querySelectorAll(
+    ".hero-content, .hero-blob, .hero-dog"
+  );
+
+  elements.forEach(el=>{
+    el.classList.remove("animate");
+  });
+
+  setTimeout(()=>{
+    elements.forEach(el=>{
+      el.classList.add("animate");
+    });
+  },100);
+
+});
+
+const track = document.getElementById("aboutTrack")
+const prev = document.getElementById("aboutPrev")
+const next = document.getElementById("aboutNext")
+const dots = document.querySelectorAll(".dot")
+const about = document.querySelector(".about")
+
+let index = 0
+const total = track.children.length
+const slideTime = 7000
+
+
+function updateSlide(){
+
+  track.style.transform = `translateX(-${index * 100}%)`
+
+  dots.forEach((dot,i)=>{
+    dot.classList.remove("bg-branding-500")
+    dot.classList.add("bg-neutral-300")
+
+    if(i === index){
+      dot.classList.remove("bg-neutral-300")
+      dot.classList.add("bg-branding-500")
+    }
+  })
+
+}
+
+
+next.onclick = () => {
+  index++
+  if(index >= total) index = 0
+  updateSlide()
+}
+
+prev.onclick = () => {
+  index--
+  if(index < 0) index = total - 1
+  updateSlide()
+}
+
+
+function autoSlide(){
+  index++
+  if(index >= total) index = 0
+  updateSlide()
+}
+
+let slider = setInterval(autoSlide, slideTime)
+
+about.addEventListener("mouseenter", ()=>{
+  clearInterval(slider)
+})
+
+about.addEventListener("mouseleave", ()=>{
+  slider = setInterval(autoSlide, slideTime)
+})
+
+
+let startX = 0
+let endX = 0
+
+track.addEventListener("touchstart", (e)=>{
+  startX = e.touches[0].clientX
+})
+
+track.addEventListener("touchend", (e)=>{
+  endX = e.changedTouches[0].clientX
+  handleSwipe()
+})
+
+function handleSwipe(){
+
+  let diff = startX - endX
+
+  if(diff > 50){
+    index++
+  }
+
+  if(diff < -50){
+    index--
+  }
+
+  if(index >= total) index = 0
+  if(index < 0) index = total - 1
+
+  updateSlide()
+
+}
+
+const reveals = document.querySelectorAll(".reveal")
+
+window.addEventListener("scroll", ()=>{
+
+  reveals.forEach(el=>{
+    const top = el.getBoundingClientRect().top
+    const windowHeight = window.innerHeight
+
+    if(top < windowHeight - 80){
+      el.classList.add("show")
+    }
+
+  })
+
+})
+
+const elements = document.querySelectorAll(
+".fade-down, .slide-left, .slide-right, .fade-up"
+)
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show")
+    }
+  })
+},{
+  threshold:0.2
+})
+
+elements.forEach(el=>{
+  observer.observe(el)
+})
+
+const clapBtn = document.querySelector("#reward .btn-secondary")
+const sound = document.getElementById("clapSound")
+const section = document.getElementById("reward")
+
+clapBtn.addEventListener("click", ()=>{
+
+  sound.currentTime = 0
+  sound.play()
+
+  for(let i=0;i<10;i++){
+
+    const hand = document.createElement("div")
+    hand.classList.add("clap-hand")
+    const emojis = ["👏","🥳"]
+    hand.innerHTML = emojis[Math.floor(Math.random()*emojis.length)]
+
+    hand.style.left = Math.random()*100 + "%"
+    hand.style.fontSize = 40 + Math.random()*30 + "px"
+    section.appendChild(hand)
+
+    setTimeout(()=>{
+      hand.remove()
+    },3000)
+
+  }
+
+})
+
+const loveWall = document.querySelector(".love-wall")
+loveWall.innerHTML += loveWall.innerHTML
+
+const modal = document.getElementById("loveModal")
+const openBtn = document.getElementById("openLoveModal")
+const closeBtn = document.getElementById("closeModal")
+
+openBtn.addEventListener("click", () => {
+  modal.classList.remove("hidden")
+  modal.classList.add("flex")
+})
+
+closeBtn.addEventListener("click", () => {
+  modal.classList.add("hidden")
+})
+modal.addEventListener("click", (e)=>{
+  if(e.target === modal){
+    modal.classList.add("hidden")
+  }
+})
+
+const sendBtn = document.getElementById("sendLove")
+const wall = document.querySelector(".love-wall")
+
+sendBtn.addEventListener("click", () => {
+
+  const name = document.getElementById("userName").value
+  const message = document.getElementById("userMessage").value
+
+  if(!name || !message) return
+
+  const card = document.createElement("div")
+  card.classList.add("love-card")
+
+  card.innerHTML = `
+    <div class="love-header">🐾 ${name}</div>
+    <p class="love-message">${message}</p>
+  `
+
+  wall.appendChild(card)
+
+  modal.classList.add("hidden")
+
+})
+
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const overlay = document.getElementById("menuOverlay");
+const closeMenu = document.getElementById("closeMenu");
+
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.remove("translate-x-full");
+  overlay.classList.remove("hidden");
+});
+
+function closeMobileMenu() {
+  mobileMenu.classList.add("translate-x-full");
+  overlay.classList.add("hidden");
+}
+
+closeMenu.addEventListener("click", closeMobileMenu);
+
+overlay.addEventListener("click", closeMobileMenu);
+
+const menuLinks = document.querySelectorAll("#mobileMenu a");
+
+menuLinks.forEach(link => {
+  link.addEventListener("click", closeMobileMenu);
+});
+
+const followModal = document.getElementById("followModal");
+const openFollowBtns = document.querySelectorAll(".openFollowModal");
+const closeFollowBtn = document.getElementById("closeFollowModal");
+
+openFollowBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    followModal.classList.remove("hidden");
+    followModal.classList.add("flex");
+  });
+});
+
+closeFollowBtn.addEventListener("click", () => {
+  followModal.classList.add("hidden");
+  followModal.classList.remove("flex");
+});
+
+followModal.addEventListener("click", (e) => {
+  if (e.target === followModal) {
+    followModal.classList.add("hidden");
+    followModal.classList.remove("flex");
+  }
+});
+
+</script>
 </body>
 </html>

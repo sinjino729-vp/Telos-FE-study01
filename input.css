@@ -22,9 +22,7 @@
   }
 
   .header {
-    @apply bg-branding-100 py-5
-             shadow-header
-             w-full;
+    @apply bg-branding-100 py-5 shadow-header w-full;
   }
 
   .logo-wrapper {
@@ -48,12 +46,12 @@
   }
 
   .btn-primary {
-    @apply bg-branding-500 text-neutral-100 hover:bg-branding-800 hover:-translate-y-0.5;
+    @apply bg-branding-500 text-neutral-100 hover:bg-branding-700 hover:-translate-y-0.5;
   }
 
   .btn-secondary {
-    @apply  text-branding-500 bg-neutral-100
-           hover:bg-branding-500 hover:text-neutral-100 hover:-translate-y-0.5;
+    @apply  text-branding-500 bg-neutral-100 border border-branding-500 
+            hover:bg-branding-900 hover:border-hidden hover:text-neutral-100 hover:-translate-y-0.5;
   }
   
   .btn-icon {
@@ -66,19 +64,18 @@
   }
 
 .hero{
-  @apply w-full min-h-[520px] md:min-h-[640px] py-0 md:py-20 bg-secondaryCool relative overflow-hidden;
+  @apply w-full  bg-secondaryCool relative overflow-hidden;
 }
 
 .hero-wrapper{
-  @apply max-w-[1200px] mx-auto px-6  flex flex-col  md:grid md:grid-cols-2 items-center gap-12
-  min-h-[720px];
+  @apply max-w-[1200px] mx-auto px-6 md:px-0 md:py-20 pt-20 pb-10 flex flex-col  md:grid md:grid-cols-2 items-center gap-2 md:gap-12;
 }
 
 .hero-content{
-  @apply flex flex-col justify-center relative z-10
+  @apply flex flex-col justify-center relative z-10 mt-6
   max-w-full md:max-w-[560px]
   order-2 md:order-1
-  text-left;
+  text-center md:text-left;
 }
 
 .hero-title{
@@ -97,12 +94,12 @@
 }
 
 .hero-actions{
-  @apply flex gap-6 pt-8 flex-wrap;
+  @apply flex flex-col md:flex-row gap-4 md:gap-6 pt-8 md:items-start;
 }
 
 
 .hero-avatars{
-  @apply flex gap-4 pt-5 pb-5 md:pt-12 
+  @apply flex gap-4 md:pt-20 pt-12 pb-5
   flex-nowrap
   overflow-x-auto md:overflow-visible;
 }
@@ -123,50 +120,34 @@
 }
 
 .hero-image{
-  @apply relative flex justify-center md:justify-end items-end
+  @apply relative flex items-end
   order-1 md:order-2
-  w-full min-h-[420px];
+  w-full md:min-h-[540px];
 }
 
 .hero-blob{
   @apply absolute
-  w-[500px] md:w-[720px]
-  top-[-100px] md:top-[-380px]
+  w-[400px] md:w-[720px]
+  top-[-100px] md:top-[-320px]
   right-[-40px] md:right-[-180px]
-  z-[1];
+  z-[1]
 }
+
 
 .hero-dog{
-  @apply absolute z-[10]
+  @apply relative md:absolute z-[20]
   left-1/2 md:left-auto
-  md:right-[-5%]
+  md:right-[-8%]
   -translate-x-1/2 md:translate-x-0
-  bottom-0
-  w-[420px] md:w-[850px]
-  md:h-[520px] h-auto object-contain;
+  top-[20px] md:top-1/2
+  md:-translate-y-1/2
+  w-[260px] md:w-[400px]
+  h-auto object-contain;
 }
-
-.hero-sticker{
-  @apply absolute w-[110px] z-[20] hidden md:block pointer-events-none;
-}
-
-.hero-sticker-1{
-  @apply top-[15px] right-[380px] rotate-[-8deg];
-}
-
-.hero-sticker-2{
-  @apply top-[380px] right-[350px] rotate-[15deg];
-}
-
-.hero-sticker-3{
-  @apply top-[150px] -right-[100px] rotate-[20deg];
-}
-
-
 .card{
   @apply bg-neutral-100 rounded-lg flex flex-col p-4 gap-3 shadow-card overflow-hidden 
   hover:shadow-xl hover:-translate-y-1
-  transition duration-300;
+  transition duration-300 reveal;
 }
 
 .card-image{
@@ -194,15 +175,15 @@
 }
 
 .certificate-card{
-  @apply w-full max-w-[800px] mx-auto
-  px-14 pt-14 pb-10
+  @apply w-full max-w-[500px] mx-auto
+  px-14 md:pt-14 md:pb-10 pt-6 pb-4
   bg-neutral-100 rounded-2xl
-  flex flex-col items-center text-center gap-8
+  flex flex-col items-center text-center md:gap-8 gap-4
   shadow-card;
 }
 
 .certificate-icon{
-  @apply w-[220px] transition duration-100 hover:rotate-15;
+  @apply  w-[100px] md:w-[220px] transition duration-100;
 }
 
 .certificate-title{
@@ -215,6 +196,239 @@
 
 .certificate-list{
   @apply text-neutral-900 text-btns md:text-btnm leading-relaxed;
+}
+
+
+.love-wall-section{
+  @apply bg-branding-700 py-10 md:py-20 md:px-10 px-4 overflow-hidden;
+}
+
+
+.love-slider{
+  @apply w-full overflow-hidden;
+}
+
+.love-wall{
+  @apply flex gap-7 w-max;
+  animation: loveSlide 25s linear infinite;
+}
+
+.love-card{
+  @apply bg-white p-4 rounded-lg shadow-card min-w-[220px] transition hover:-translate-y-1 hover:shadow-xl;
+}
+.love-card:nth-child(3n){
+  min-width:260px;
+}
+
+.love-card:nth-child(4n){
+  min-width:200px;
+}
+
+.love-header{
+  @apply flex items-center gap-[6px] text-branding-600 font-semibold text-left mb-2;
+}
+.love-message{
+  @apply text-bodysm text-left leading-[1.4] text-branding-900;
+}
+.love-wall:hover{
+  animation-play-state: paused;
+}
+
+
+@keyframes loveSlide{
+
+0%{
+  transform: translateX(0);
+}
+
+100%{
+  transform: translateX(-50%);
+}
+
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blobScale {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes dogSlideMobile {
+
+  from{
+    opacity:0;
+    transform: translateX(calc(-50% + 120px));
+  }
+
+  to{
+    opacity:1;
+    transform: translateX(-50%);
+  }
+
+}
+@keyframes dogSlideDesktop {
+
+  from{
+    opacity:0;
+    transform: translateX(150px) translateY(-50%);
+  }
+
+  to{
+    opacity:1;
+    transform: translateX(0) translateY(-50%);
+  }
+
+}
+
+.hero-dog.animate{
+  animation: dogSlideMobile .8s ease-out .6s forwards;
+}
+
+@media (min-width:768px){
+
+  .hero-dog.animate{
+    animation: dogSlideDesktop .8s ease-out .6s forwards;
+  }
+
+}
+
+
+.hero-content {
+  opacity: 0;
+}
+.hero-content.animate {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.hero-blob{
+  opacity:0;
+}
+
+.hero-blob.animate{
+  animation: blobScale 0.8s ease-out 0.4s forwards;
+}
+
+.hero-dog{
+  opacity:0;
+}
+
+
+.reveal{
+  opacity:0;
+  transform: translateY(40px);
+  transition: all .7s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform: translateY(0);
+}
+
+.reveal:nth-child(1){ transition-delay: .1s }
+.reveal:nth-child(2){ transition-delay: .3s }
+.reveal:nth-child(3){ transition-delay: .5s }
+.reveal:nth-child(4){ transition-delay: .7s }
+.reveal:nth-child(5){ transition-delay: .9s }
+.reveal:nth-child(6){ transition-delay: 1.1s}
+
+.card-image img{
+  transition: transform .4s ease;
+}
+
+.card:hover img{
+  transform: scale(1.05);
+}
+
+
+.fade-down,
+.slide-left,
+.slide-right,
+.fade-up{
+  opacity:0;
+  transition:all .8s ease;
+}
+
+.fade-down{
+  transform:translateY(-40px);
+}
+
+.slide-left{
+  transform:translateX(-60px);
+}
+
+.slide-right{
+  transform:translateX(60px);
+}
+
+.fade-up{
+  transform:translateY(40px);
+}
+
+.show{
+  opacity:1;
+  transform:translate(0,0);
+}
+
+.fade-down{ transition-delay:.1s }
+.slide-left{ transition-delay:.3s }
+.slide-right{ transition-delay:.5s }
+.fade-up{ transition-delay:.7s }
+
+.clap-hand{
+ position:absolute;
+ font-size:28px;
+ pointer-events:none;
+ animation:clapFall 2s linear forwards;
+}
+
+@keyframes clapFall{
+
+ 0%{
+   transform:translateY(-50px) rotate(0deg);
+   opacity:1;
+ }
+
+ 100%{
+   transform:translateY(120vh) rotate(200deg);
+   opacity:0;
+ }
+
 }
 
 }
